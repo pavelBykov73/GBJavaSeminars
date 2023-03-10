@@ -1,4 +1,4 @@
-package org.example;
+package org.example.hw1;
 
 import org.example.hw1.model.Product;
 
