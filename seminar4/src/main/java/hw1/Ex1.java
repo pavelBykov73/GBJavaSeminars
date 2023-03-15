@@ -1,4 +1,4 @@
-package org.example.hw1;
+package hw1;
 
 import java.util.LinkedList;
 import java.util.Random;
