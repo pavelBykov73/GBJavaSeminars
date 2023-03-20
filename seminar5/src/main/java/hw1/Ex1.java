@@ -40,7 +40,7 @@ public class Ex1 {
         // [—!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~–]
         // \\p{IsPunctuation}
         String str = s.trim().toLowerCase()
-                .replaceAll("\\p{IsPunctuation}", "");
+                .replaceAll("\\p{IsPunctuation}", " ");
         String[] words = str.split("\\s+");
         //System.out.println(str);
         for (String word : words
