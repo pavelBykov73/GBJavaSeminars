@@ -89,7 +89,7 @@ public class Ex1 {
         int menu0UserSelect;
         boolean endOfMenu = false;
         List<String> menu0 = new ArrayList<>(List.of(
-                "Brand Id", "Brand Name", "Model", "OS", "RAM", "HDD", "COLOR", "Price", "Exit", ""));
+                "Brand Id", "Brand Name", "Model", "OS", "RAM", "HDD", "COLOR", "Price", "Exit"));
         while (!endOfMenu) {
             System.out.println("Выберите действие для установки фильтра:");
             for (int i = 0; i < menu0.size(); i++) {

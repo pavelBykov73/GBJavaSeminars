@@ -45,5 +45,4 @@ public class Notebook {
                 && t.ramGb == ramGb
                 && t.diagonal == diagonal;
     }
-
 }

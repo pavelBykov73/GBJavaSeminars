@@ -9,7 +9,7 @@ import java.util.Set;
  * Обеспечивает добавление / удаление и др. операции с поддержанием целостности и уникальности записей
  */
 public class Brands {
-    public Set<Brand> brands = new HashSet<>();
+    Set<Brand> brands = new HashSet<>();
     int idUnique; // уникальный идентификатор
 
     public Brands() {

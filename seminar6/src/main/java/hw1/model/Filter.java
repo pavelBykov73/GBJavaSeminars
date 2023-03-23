@@ -89,5 +89,4 @@ public class Filter {
         System.out.println(msg);
         return scanner.nextLine();
     }
-
 }
