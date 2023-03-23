@@ -1,5 +1,9 @@
 package hw1.model;
 
+/**
+ * Перечисление цветов
+ * NONE - цвет не определен
+ */
 public enum Color {
     NONE(""), SILVER("Silver"), BLACK("Black"), WHITE("White");
     private String code;

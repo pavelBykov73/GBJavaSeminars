@@ -6,14 +6,15 @@ import lombok.Getter;
 
 
 /**
- *
+ * Класс Ноутбук. Содержит необходимые характеристики ноутбуков и методы работы с ними
+ * Фактически представляет собой запись в таблицы БД "ноутбуки"
  */
 @Data
 @AllArgsConstructor
 @Getter
 public class Notebook {
     private int id;
-    private int brandId;
+    private int brandId;    // связь с набором брендов по ключу
     private String model;
     private int diagonal;
     private Os os;
@@ -22,28 +23,15 @@ public class Notebook {
     private int hddGb;
     private int price;
 
-//    public Notebook(int id, int brandId, String model, int diagonal, Os os, Color color, int ramGb, int hddGb, int price) {
-//        this.id = id;
-//        this.brandId = brandId;
-//        this.model = model;
-//        this.diagonal = diagonal;
-//        this.os = os;
-//        this.color = color;
-//        this.ramGb = ramGb;
-//        this.hddGb = hddGb;
-//        this.price = price;
-//    }
 
     public String toString() {
-        String str = new String();
-        str = String.format("Brand: %d,\t model %s,\t OS %s,\t RAM: %d GB,\t price = %d",
+        return String.format("Brand: %d,\t model %s,\t OS %s,\t RAM: %d GB,\t price = %d",
                 brandId,
                 model,
                 os.getOs(),
                 ramGb,
                 price
         );
-        return str;
     }
 
     @Override

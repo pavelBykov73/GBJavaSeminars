@@ -1,5 +1,8 @@
 package hw1.model;
 
+/**
+ * Класс "Бренд"
+ */
 public class Brand {
     int id;
     String name;
@@ -17,7 +20,7 @@ public class Brand {
     @Override
     public boolean equals(Object o) {
         var t = (Brand) o;
-        return id == t.id;
+        return id == t.id; // Не может быть несколько записей с одинаковым id
     }
 
     @Override

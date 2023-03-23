@@ -3,10 +3,15 @@ package hw1.model;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Класс "Ноутбуки" - таблица БД
+ * Хранит список (набор) ноутбуков
+ * Обеспечивает добавление / удаление и др. операции с поддержанием целостности и уникальности записей
+ */
 public class Notebooks {
     public Set<Notebook> notebooks = new HashSet<>();
-    Brands brands;
-    int idUnique;
+    Brands brands; // Справочник (набор) брендов - связанная таблица
+    int idUnique; // уникальный идентификатор записей
 
     public Notebooks() {
         brands = new Brands();
@@ -17,6 +22,21 @@ public class Notebooks {
         return brands;
     }
 
+    /**
+     * Добавление ноутбука в таблицу (набор) с уникальным id
+     * Название бренда конвертируется в идентификатор (при необходимости добавляется в таблицу брендов)
+     * Добавляются только уникальные записи о ноутбуках
+     *
+     * @param brandName
+     * @param model
+     * @param diagonal
+     * @param os
+     * @param color
+     * @param ram
+     * @param hdd
+     * @param price
+     * @return
+     */
     public int addNotebook(String brandName, String model, int diagonal, Os os, Color color,
                            int ram, int hdd, int price) {
         Notebook notebook = new Notebook(++idUnique, brands.addBrand(brandName), model, diagonal,
@@ -24,7 +44,7 @@ public class Notebooks {
 
         for (Notebook nb : notebooks) {
             if (nb.equals(notebook)) {
-                idUnique--;
+                idUnique--; // откат идентификатора при отмене вставки
                 return nb.getId();
             }
         }
@@ -41,12 +61,18 @@ public class Notebooks {
         return null;
     }
 
+    /**
+     * Печать полного списка ноутбуков
+     */
     public void print() {
         for (Notebook nb : notebooks) {
             System.out.println(toString(nb));
         }
     }
 
+    /**
+     * Печать списка ноутбуков с учетом фильтра
+     */
     public void print(Filter flt) {
         for (Notebook nb : notebooks) {
             if (
@@ -65,6 +91,13 @@ public class Notebooks {
         }
     }
 
+    /**
+     * Формирование строки записи о ноутбуке
+     *
+     * @param nb - ноутбук
+     * @return строка
+     * TODO использовать toString() класса Notebook, с инжекцией строки бренда
+     */
     public String toString(Notebook nb) {
         return new String().format("id %d,\t Brand: %s,\t model %s,\t OS %s,\t RAM: %d GB," +
                         "\t HDD: %d GB,\t color: %s GB,\t price = %d",
@@ -78,8 +111,6 @@ public class Notebooks {
                 nb.getPrice()
         );
     }
+    // TODO Добавить функцию применения фильтра и выдачи набора отфильтрованных записей (вместо прямой печати)
+    // TODO перегрузить метод toString() ?
 }
-// hset.stream().filter(data -> Objects.equals(data, "Tim")).findFirst().get()
-//Stream<String> citiesStream = Stream.of("Париж", "Лондон", "Мадрид","Берлин", "Брюссель");
-//citiesStream.filter(s->s.length()==6).forEach(s->System.out.println(s));
-

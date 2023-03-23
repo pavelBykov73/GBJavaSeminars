@@ -3,8 +3,11 @@ package hw1.model;
 import java.io.Console;
 import java.util.*;
 
+/**
+ * Настройки фильтра
+ */
 public class Filter {
-    public int brandId;
+    public int brandId; // если 0 - то не учитываем id и используем brandName
     public String brandName;
     public String model;
     public int diagonalMin;

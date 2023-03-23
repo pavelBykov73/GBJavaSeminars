@@ -18,6 +18,9 @@ import java.util.List;
  * • Далее нужно запросить минимальные значения для указанных критериев - сохранить параметры
  * фильтрации можно также в Map.
  * • Отфильтровать ноутбуки их первоначального множества и вывести проходящие по условиям.
+ * <p>
+ * В данном решении использована архитектура аналогичная БД с таблицами справочников.
+ * Это привело к усложнению кода в части работы с такого рода данными
  */
 public class Ex1 {
 
@@ -30,17 +33,15 @@ public class Ex1 {
         notebooks.print();
         Filter filter = new Filter();
         userMenu(filter, notebooks.getBrands());
-//        filter.model = filter.inputString("Название модели:");
-//        filter.color = filter.consoleInputColor(); // Color.BLACK;
-//        filter.os = filter.consoleInputOs();
-//        filter.brandId = filter.consoleInputBrandId(notebooks.getBrands());
-//        filter.brandName = filter.inputString("Название бренда:");
-//        filter.ramGbMin = filter.inputIntegerLimit("Минимальный объем ОЗУ:", 0, 128);
-//        filter.hddGbMin = filter.inputIntegerLimit("Минимальный объем HDD:", 0, 100000);
         System.out.println("Ноутбуки удовлетворяющие условию:");
         notebooks.print(filter);
     }
 
+    /**
+     * Заполнение списка ноутбуков тестовыми данными
+     *
+     * @param nbs - "БД" ноутбуков
+     */
     private static void addSampleNotebooks(Notebooks nbs) {
         nbs.addNotebook("HP", "fg-432", 14,
                 Os.WINDOWS, Color.BLACK, 2, 4000, 43000);
@@ -68,6 +69,11 @@ public class Ex1 {
                 Os.WINDOWS, Color.SILVER, 16, 1000, 27800);
     }
 
+    /**
+     * Наполнение справочника брендов тестовыми данными
+     *
+     * @param brands - справочник БД "бренды"
+     */
     private static void addSampleBrands(Brands brands) {
         brands.addBrand("Asus");
         brands.addBrand("Acer");
