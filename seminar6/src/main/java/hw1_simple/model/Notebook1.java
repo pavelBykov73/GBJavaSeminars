@@ -15,42 +15,27 @@ import java.util.Objects;
 @Data
 @AllArgsConstructor
 @Getter
-public class Notebook {
+public class Notebook1 {
     private String brand;    // связь с набором брендов по ключу
     private String model;
-    private int diagonal;
-    private String os;
-    private String color;
-    private int ramGb;
-    private int hddGb;
-    private int price;
 
 
     public String toString() {
-        return String.format("Brand: %s,\t model %s,\t diagonal %d,\t OS %s,\t RAM: %d GB,\t price = %d",
+        return String.format("Brand: %s,\t model %s",
                 brand,
-                model,
-                diagonal,
-                os,
-                ramGb,
-                price
+                model
         );
     }
 
     @Override
     public boolean equals(Object o) {
-        var t = (Notebook) o;
+        var t = (Notebook1) o;
         return t.brand == brand
-                && t.model == model
-                && t.os == os
-                && t.color == color
-                && t.hddGb == hddGb
-                && t.ramGb == ramGb
-                && t.diagonal == diagonal;
+                && t.model == model;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, model, diagonal, os, color, ramGb, hddGb, price);
+        return Objects.hash(brand, model);
     }
 }
