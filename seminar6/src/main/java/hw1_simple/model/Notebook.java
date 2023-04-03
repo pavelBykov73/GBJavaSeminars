@@ -16,8 +16,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Getter
 public class Notebook {
-    private int id;
-    private String brand;    // связь с набором брендов по ключу
+    private String brand;
     private String model;
     private int diagonal;
     private String os;
@@ -28,8 +27,7 @@ public class Notebook {
 
 
     public String toString() {
-        return String.format("id: %d,\t Brand: %s,\t model %s,\t diagonal %d,\t OS %s,\t RAM: %d GB,\t price = %d",
-                id,
+        return String.format("Brand: %s,\t model %s,\t diagonal %d,\t OS %s,\t RAM: %d GB,\t price = %d",
                 brand,
                 model,
                 diagonal,
