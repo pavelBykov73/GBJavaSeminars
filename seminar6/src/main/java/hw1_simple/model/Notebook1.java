@@ -21,7 +21,7 @@ public class Notebook1 {
 
 
     public String toString() {
-        return String.format("Brand: %s,\t model %s",
+        return String.format("Brand: %s,\t model: %s",
                 brand,
                 model
         );
