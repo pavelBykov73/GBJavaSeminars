@@ -1,6 +1,6 @@
 package hw1_simple.model;
 
-public abstract class TableRow<T> {
+public abstract class TableRowBase<T> {
     int uniqueId;
     T item;
 

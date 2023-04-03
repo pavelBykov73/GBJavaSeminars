@@ -2,10 +2,10 @@ package hw1_simple.model;
 
 import java.util.Objects;
 
-public class NotebookTableRow<T> extends TableRow<T> {
+public class TableRowWithUID<T> extends TableRowBase<T> {
     private static int rowUniqueId = 0;
 
-    public NotebookTableRow(T data) {
+    public TableRowWithUID(T data) {
         setId(rowUniqueId++);
         setItem(data);
     }
@@ -36,7 +36,7 @@ public class NotebookTableRow<T> extends TableRow<T> {
 
     @Override
     public boolean equals(Object o) {
-        var t = (NotebookTableRow) o;
+        var t = (TableRowWithUID) o;
         return t.item.equals(super.item);
     }
 

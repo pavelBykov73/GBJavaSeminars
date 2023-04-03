@@ -1,11 +1,7 @@
 package hw1_simple;
 
-import hw1_simple.model.FilterKey;
-import hw1_simple.model.Notebook;
 import hw1_simple.model.Notebook1;
-import hw1_simple.model.NotebooksTable;
-
-import java.util.*;
+import hw1_simple.model.DataTable;
 
 /**
  * • Подумать над структурой класса Ноутбук для магазина техники - выделить поля и методы. Реализовать в java.
@@ -27,7 +23,7 @@ import java.util.*;
 public class Ex1Simple {
 
     public static void main(String[] args) {
-        NotebooksTable<Notebook1> notebooksTable = new NotebooksTable();
+        DataTable<Notebook1> notebooksTable = new DataTable();
         notebooksTable.Add(new Notebook1("HP", "notebook1"));
         notebooksTable.Add(new Notebook1("HP", "notebook1"));
         notebooksTable.Add(new Notebook1("HP", "notebook1"));

@@ -3,17 +3,17 @@ package hw1_simple.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class NotebooksTable<T> implements IDataTable<T> {
-    Set<NotebookTableRow> notebooks = new HashSet<>();
+public class DataTable<T> implements IDataTable<T> {
+    Set<TableRowWithUID> notebooks = new HashSet<>();
 
     @Override
     public int Add(T item) {
-        for (NotebookTableRow row : notebooks) {
+        for (TableRowWithUID row : notebooks) {
             if (row.item.equals(item)) {
                 return row.getId();
             }
         }
-        NotebookTableRow row = new NotebookTableRow(item);
+        TableRowWithUID row = new TableRowWithUID(item);
         notebooks.add(row);
         return row.getId();
     }
@@ -26,7 +26,7 @@ public class NotebooksTable<T> implements IDataTable<T> {
     @Override
     public String toString() {
         String str = new String();
-        for (NotebookTableRow row : notebooks) {
+        for (TableRowWithUID row : notebooks) {
             //System.out.println(row);
             str += row.toString() + "\n";
         }
@@ -34,7 +34,7 @@ public class NotebooksTable<T> implements IDataTable<T> {
     }
 
     public void print() {
-        for (NotebookTableRow row : notebooks) {
+        for (TableRowWithUID row : notebooks) {
             //System.out.println(row.data + row.getId());
             System.out.println(row.toString());
         }
