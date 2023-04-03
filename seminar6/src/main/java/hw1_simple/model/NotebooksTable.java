@@ -3,7 +3,7 @@ package hw1_simple.model;
 import java.util.*;
 
 
-public class NotebooksTable extends DataTable<Notebook> {
+public class NotebooksTable extends DataTable<Notebook> implements INotebooksTable {
 
     public Set<Notebook> getNotebooks(Map<FilterKey, String> mapFilter) {
         Set<Notebook> filtered = new HashSet<>();
