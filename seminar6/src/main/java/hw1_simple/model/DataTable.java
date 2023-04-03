@@ -27,7 +27,6 @@ public class DataTable<T> implements IDataTable<T> {
     public String toString() {
         String str = new String();
         for (TableRowWithUID row : table) {
-            //System.out.println(row);
             str += row.toString() + "\n";
         }
         return str;
@@ -35,7 +34,6 @@ public class DataTable<T> implements IDataTable<T> {
 
     public void print() {
         for (TableRowWithUID row : table) {
-            //System.out.println(row.data + row.getId());
             System.out.println(row.toString());
         }
     }

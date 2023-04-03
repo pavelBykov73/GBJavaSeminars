@@ -7,4 +7,8 @@ public interface INotebooksTable {
     public Set<Notebook> getNotebooks(Map<FilterKey, String> mapFilter);
 
     public void printNotebooks(Map<FilterKey, String> mapFilter);
+
+    public int Add(Notebook notebook);
+
+    public boolean Delete(int id);
 }

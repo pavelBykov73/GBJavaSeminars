@@ -5,13 +5,20 @@ import java.util.*;
 
 public class NotebooksTable extends DataTable<Notebook> implements INotebooksTable {
 
+    public int Add(Notebook notebook) {
+        return super.Add(notebook);
+    }
+
+    public boolean Delete(int id) {
+        return super.Delete(id);
+    }
+
     public Set<Notebook> getNotebooks(Map<FilterKey, String> mapFilter) {
         Set<Notebook> filtered = new HashSet<>();
         for (TableRowWithUID<Notebook> notebook : table) {
             if (mapFilter == null
                     || checkFilterCondition(notebook.getItem(), mapFilter)
             ) {
-                //System.out.println(notebook.toString());
                 filtered.add(notebook.getItem());
             }
         }

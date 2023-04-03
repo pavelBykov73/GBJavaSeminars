@@ -2,7 +2,6 @@ package hw1_simple;
 
 import hw1_simple.model.*;
 
-import java.util.Set;
 
 /**
  * 03.04.2023 - доработка решения для использования ООП - интерфейс, абстрактный класс.
@@ -28,12 +27,6 @@ public class Ex1Simple {
     public static void main(String[] args) {
         NotebooksTable notebooksTable = new NotebooksTable();
         addSampleNotebooks(notebooksTable);
-//        notebooksTable.Add(new Notebook1("HP", "notebook1"));
-//        notebooksTable.Add(new Notebook1("HP", "notebook1"));
-//        notebooksTable.Add(new Notebook1("HP", "notebook1"));
-//        notebooksTable.Add(new Notebook1("HP", "notebook3"));
-//        notebooksTable.Add(new Notebook1("ASUS", "notebook1"));
-//        notebooksTable.Add(new Notebook1("Acer", "notebook1"));
         System.out.println("Полный список ноутбуков:");
         System.out.println(notebooksTable);
 

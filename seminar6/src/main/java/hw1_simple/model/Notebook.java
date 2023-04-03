@@ -16,7 +16,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Getter
 public class Notebook {
-    private String brand;    // связь с набором брендов по ключу
+    private String brand;
     private String model;
     private int diagonal;
     private String os;
