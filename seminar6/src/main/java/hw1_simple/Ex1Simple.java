@@ -27,7 +27,7 @@ import java.util.*;
 public class Ex1Simple {
 
     public static void main(String[] args) {
-        NotebooksTable notebooksTable = new NotebooksTable();
+        NotebooksTable<Notebook1> notebooksTable = new NotebooksTable();
         notebooksTable.Add(new Notebook1("HP", "notebook1"));
         notebooksTable.Add(new Notebook1("HP", "notebook1"));
         notebooksTable.Add(new Notebook1("HP", "notebook1"));

@@ -2,10 +2,10 @@ package hw1_simple.model;
 
 import java.util.Objects;
 
-public class NotebookTableRow extends TableRow<Notebook1> {
+public class NotebookTableRow<T> extends TableRow<T> {
     private static int rowUniqueId = 0;
 
-    public NotebookTableRow(Notebook1 data) {
+    public NotebookTableRow(T data) {
         setId(rowUniqueId++);
         setItem(data);
     }
@@ -20,19 +20,18 @@ public class NotebookTableRow extends TableRow<Notebook1> {
     }
 
     @Override
-    public Notebook1 getItem() {
+    public T getItem() {
         return super.item;
     }
 
     @Override
-    public void setItem(Notebook1 item) {
+    public void setItem(T item) {
         super.item = item;
     }
 
     @Override
     public String toString() {
-        return String.format("%d %s %s", getId(), super.item.getBrand(), super.item.getModel());
-//        return super.toString();
+        return String.format("%d %s", getId(), getItem().toString());
     }
 
     @Override

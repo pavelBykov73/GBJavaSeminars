@@ -3,11 +3,11 @@ package hw1_simple.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class NotebooksTable implements IDataTable<Notebook1> {
+public class NotebooksTable<T> implements IDataTable<T> {
     Set<NotebookTableRow> notebooks = new HashSet<>();
 
     @Override
-    public int Add(Notebook1 item) {
+    public int Add(T item) {
         for (NotebookTableRow row : notebooks) {
             if (row.item.equals(item)) {
                 return row.getId();
