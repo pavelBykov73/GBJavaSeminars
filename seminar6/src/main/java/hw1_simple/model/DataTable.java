@@ -4,17 +4,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DataTable<T> implements IDataTable<T> {
-    Set<TableRowWithUID> notebooks = new HashSet<>();
+    Set<TableRowWithUID> table = new HashSet<>();
 
     @Override
     public int Add(T item) {
-        for (TableRowWithUID row : notebooks) {
+        for (TableRowWithUID row : table) {
             if (row.item.equals(item)) {
                 return row.getId();
             }
         }
         TableRowWithUID row = new TableRowWithUID(item);
-        notebooks.add(row);
+        table.add(row);
         return row.getId();
     }
 
@@ -26,7 +26,7 @@ public class DataTable<T> implements IDataTable<T> {
     @Override
     public String toString() {
         String str = new String();
-        for (TableRowWithUID row : notebooks) {
+        for (TableRowWithUID row : table) {
             //System.out.println(row);
             str += row.toString() + "\n";
         }
@@ -34,7 +34,7 @@ public class DataTable<T> implements IDataTable<T> {
     }
 
     public void print() {
-        for (TableRowWithUID row : notebooks) {
+        for (TableRowWithUID row : table) {
             //System.out.println(row.data + row.getId());
             System.out.println(row.toString());
         }
